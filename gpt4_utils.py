@@ -15,7 +15,7 @@ def extract_fields_from_text(text):
     }
     """
 
-    response = openai.Chat.Completions.create(
+    response = openai.chat.completions.create(
         model="gpt-4",
         messages=[
             {"role": "system", "content": system_prompt},
