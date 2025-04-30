@@ -15,7 +15,7 @@ def extract_fields_from_text(text):
     }
     """
 
-    response = openai.ChatCompletion.create(
+    response = openai.Chat.Completions.create(
         model="gpt-4",
         messages=[
             {"role": "system", "content": system_prompt},
@@ -24,4 +24,4 @@ def extract_fields_from_text(text):
         temperature=0.2,
     )
     
-    return response['choices'][0]['message']['content']
+    return response.choices[0].message.content
